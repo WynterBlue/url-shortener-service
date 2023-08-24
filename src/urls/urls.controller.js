@@ -1,3 +1,4 @@
+const urlsService = require("./urls.service")
 const urls = require("../data/urls-data");
 const uses = require("../data/uses-data");
 ///////////////////
@@ -25,8 +26,9 @@ function validateUrl(req, res, next) {
   }
 }
 ///////////////////
-function list(req, res, next) {
-  res.send({ data: urls });
+async function list(req, res, next) {
+  const data = await urlsService.list()
+  res.json({ data: data });
 }
 
 let nextId = 2;
