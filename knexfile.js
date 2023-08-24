@@ -2,6 +2,10 @@
 const path = require("path")
 require("dotenv").config();
 const { DATABASE_URL } = process.env;
+
+if (!DATABASE_URL) {
+  throw new Error("DATABASE_URL environment variable is not defined.");
+}
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
