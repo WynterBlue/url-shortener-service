@@ -15,6 +15,9 @@ module.exports = {
     connection: DATABASE_URL,
     migrations: {
       directory: path.join(__dirname, "src", "db", "migrations")
-    }
+    },
+    seeds: {
+      directory: './src/db/seeds', // Update this path if necessary
+    },
   },
 };
